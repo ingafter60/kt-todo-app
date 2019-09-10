@@ -121,3 +121,13 @@ The Laravel framework is open-source software licensed under the [MIT license](h
         1 row in set (0.00 sec)    
 
     . Modify the migration file    
+
+## 4. Factories and Seeders     
+   
+    modified:   database/seeds/DatabaseSeeder.php
+
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+
+            database/factories/TodoFactory.php
+            database/seeds/TodosSeeder.php
