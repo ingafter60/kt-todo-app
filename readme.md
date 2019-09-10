@@ -74,10 +74,50 @@ The Laravel framework is open-source software licensed under the [MIT license](h
 
 ##  Laravel: Building A Tasks Manager Application
 
-1. Installing Laravel
+# 1. Installing Laravel
     composer  create-project laravel/laravel kf-todo-app --prefer-dist
 
     ...
     ***** NOTE: Now, you can use pretty url for your awesome project :) *****
     (Laragon) Project path: C:/laragon/www/kf-todo-app
     (Laragon) Pretty url: http://kf-todo-app.test
+
+# 2. Using Controller, Route and Views
+    . In Controller
+    .. λ php artisan make:controller TodosController
+    .. Create index function to return view('todos.index')
+    ..
+
+# 3. Model
+    . Create databae: kt_todo_app
+    .. mysql> CREATE DATABASE kt_todo_app;
+    . Create model: Todo
+    .. λ php artisan make:migration create_todos_table     
+    . Apply the schema
+    .. λ php artisan migrate
+
+        mysql> use kt_todo_app;
+        Database changed
+        mysql> show tables;
+        +-----------------------+
+        | Tables_in_kt_todo_app |
+        +-----------------------+
+        | migrations            |
+        | password_resets       |
+        | todos                 |
+        | users                 |
+        +-----------------------+
+        4 rows in set (0.13 sec)
+
+    . Undo migration
+    .. λ php artisan migrate:rollback
+    . Check the result
+    .. mysql> show tables;
+        +-----------------------+
+        | Tables_in_kt_todo_app |
+        +-----------------------+
+        | migrations            |
+        +-----------------------+
+        1 row in set (0.00 sec)    
+
+    . Modify the migration file    
